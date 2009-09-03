@@ -1,0 +1,89 @@
+/* Generic style */
+
+.sfPhpBbBox
+{
+	margin-top: 20px;
+}
+
+.sfPhpBbBoxTitle
+{
+	background-color: #BAE6AE;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.sfPhpBbTitle
+{
+		padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+a.sfPhpBbTitleLink
+{
+	text-decoration: none;
+}
+
+a.sfPhpBbTitleLink:HOVER
+{
+	text-decoration: underline;
+}
+
+.sfPhpBbAuthorTitle
+{
+	padding-top: 0px;
+	margin-top: 0px;
+	font-style: italic;
+	font-size: 10px;
+	
+}
+
+a.sfPhpBbAuthorLink
+{
+	color: #000000;
+}
+
+.sfPhpBbAuthorName
+{
+font-size: 10px;
+}
+
+/* Specific style for Topics (overwrite precedent settings) */
+
+.sfPhpBbBoxTopics
+{
+	margin-top: 20px;
+}
+
+.sfPhpBbBoxTitleTopics
+{
+	background-color: #BAE6AE;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.sfPhpBbTopicTitle
+{
+}
+
+a.sfPhpBbTopicTitleLink
+{
+	text-decoration: none;
+}
+
+a.sfPhpBbTopicTitleLink:HOVER
+{
+	text-decoration: underline;
+}
+
+.sfPhpBbTopicAuthorTitle
+{
+	font-style: italic;
+}
+
+.sfPhpBbTopicAuthorLink
+{
+}
+
+.sfPhpBbTopicAuthorName
+{}

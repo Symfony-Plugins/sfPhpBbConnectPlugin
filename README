@@ -1,0 +1,54 @@
+sfPhpBbConnectPlugin
+====================
+
+The `sfFormExtraPlugin` connects your main site made with symfony, to phpBB 3.x, for to show the latest news from forum
+
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install sfPhpBbConnectPlugin
+        
+  * Open the file
+    /plugins/sfPhpBbConnectPlugin/config/databases.yml
+    and setup your dbname, username and password
+        
+  * Generate the models
+  
+         $ symfony doctrine:generate-models
+
+  * Make accessible the style sheet
+  
+        $ symfony plugin:publish-assets
+
+  * Clear the cache
+
+        $ symfony cache:clear
+
+
+How to use the plugin
+----------------------
+
+In the page template where you want to use the helpers, add at the beginning
+
+<?php use_helper('PhpBb') ?>
+
+You are ready for use the plugin!
+	
+Helper available
+----------------
+
+  * lastTopics($maxTopics)
+    View last topics from the phpBB forum
+    $maxTopics is the number of topics to display
+    
+  * lastPosts($maxPosts)
+    View last posts from the phpBB forum
+    $maxPosts is the number of posts to display
+    
+Example of the plugin in action
+-------------------------------
+
+An example of the plugin in action can be viewed at www.estatica.it in the right column of all pages

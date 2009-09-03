@@ -1,0 +1,6 @@
+all:
+  # Url of your forum
+  # Example
+  # If your site is www.site.it
+  # your forum could be forum.site.it or www.site.it/forum
+  url_phpbb: urlOfYourForum

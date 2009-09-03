@@ -1,0 +1,2710 @@
+PhpbbGroups:
+  connection: phpbb
+  tableName: phpbb_groups
+  columns:
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    group_type:
+      type: integer(1)
+      default: '1'
+      notnull: true
+    group_founder_manage:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    group_desc:
+      type: string(2147483647)
+      notnull: true
+    group_desc_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    group_desc_options:
+      type: integer(4)
+      unsigned: 1
+      default: '7'
+      notnull: true
+    group_desc_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    group_display:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_avatar:
+      type: string(255)
+      default: ''
+      notnull: true
+    group_avatar_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    group_avatar_width:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_avatar_height:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_rank:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_colour:
+      type: string(6)
+      default: ''
+      notnull: true
+    group_sig_chars:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_receive_pm:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_message_limit:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_legend:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    group_max_recipients:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbAclRolesData:
+  connection: phpbb
+  tableName: phpbb_acl_roles_data
+  columns:
+    role_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    auth_option_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    auth_setting:
+      type: integer(1)
+      default: '0'
+      notnull: true
+PhpbbPrivmsgs:
+  connection: phpbb
+  tableName: phpbb_privmsgs
+  columns:
+    msg_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    root_level:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    author_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    icon_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    author_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    message_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    enable_bbcode:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_smilies:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_magic_url:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_sig:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    message_subject:
+      type: string(255)
+      default: ''
+      notnull: true
+    message_text:
+      type: string(2147483647)
+      notnull: true
+    message_edit_reason:
+      type: string(255)
+      default: ''
+      notnull: true
+    message_edit_user:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    message_attachment:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    bbcode_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    bbcode_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    message_edit_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    message_edit_count:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    to_address:
+      type: string(2147483647)
+      notnull: true
+    bcc_address:
+      type: string(2147483647)
+      notnull: true
+PhpbbProfileLang:
+  connection: phpbb
+  tableName: phpbb_profile_lang
+  columns:
+    field_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    lang_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    lang_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    lang_explain:
+      type: string(2147483647)
+      notnull: true
+    lang_default_value:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbDisallow:
+  connection: phpbb
+  tableName: phpbb_disallow
+  columns:
+    disallow_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    disallow_username:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbBbcodes:
+  connection: phpbb
+  tableName: phpbb_bbcodes
+  columns:
+    bbcode_id:
+      type: integer(1)
+      primary: true
+    bbcode_tag:
+      type: string(16)
+      default: ''
+      notnull: true
+    bbcode_helpline:
+      type: string(255)
+      default: ''
+      notnull: true
+    display_on_posting:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    bbcode_match:
+      type: string(2147483647)
+      notnull: true
+    bbcode_tpl:
+      type: string(2147483647)
+      notnull: true
+    first_pass_match:
+      type: string(2147483647)
+      notnull: true
+    first_pass_replace:
+      type: string(2147483647)
+      notnull: true
+    second_pass_match:
+      type: string(2147483647)
+      notnull: true
+    second_pass_replace:
+      type: string(2147483647)
+      notnull: true
+PhpbbReports:
+  connection: phpbb
+  tableName: phpbb_reports
+  columns:
+    report_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    reason_id:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_notify:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    report_closed:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    report_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    report_text:
+      type: string(2147483647)
+      notnull: true
+PhpbbAclUsers:
+  connection: phpbb
+  tableName: phpbb_acl_users
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_option_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_role_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_setting:
+      type: integer(1)
+      default: '0'
+      notnull: true
+PhpbbLang:
+  connection: phpbb
+  tableName: phpbb_lang
+  columns:
+    lang_id:
+      type: integer(1)
+      primary: true
+      autoincrement: true
+    lang_iso:
+      type: string(30)
+      default: ''
+      notnull: true
+    lang_dir:
+      type: string(30)
+      default: ''
+      notnull: true
+    lang_english_name:
+      type: string(100)
+      default: ''
+      notnull: true
+    lang_local_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    lang_author:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbForumsWatch:
+  connection: phpbb
+  tableName: phpbb_forums_watch
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    notify_status:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbBookmarks:
+  connection: phpbb
+  tableName: phpbb_bookmarks
+  columns:
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+PhpbbStylesImageset:
+  connection: phpbb
+  tableName: phpbb_styles_imageset
+  columns:
+    imageset_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    imageset_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    imageset_copyright:
+      type: string(255)
+      default: ''
+      notnull: true
+    imageset_path:
+      type: string(100)
+      default: ''
+      notnull: true
+PhpbbIcons:
+  connection: phpbb
+  tableName: phpbb_icons
+  columns:
+    icons_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    icons_url:
+      type: string(255)
+      default: ''
+      notnull: true
+    icons_width:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    icons_height:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    icons_order:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    display_on_posting:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+PhpbbSmilies:
+  connection: phpbb
+  tableName: phpbb_smilies
+  columns:
+    smiley_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    code:
+      type: string(50)
+      default: ''
+      notnull: true
+    emotion:
+      type: string(50)
+      default: ''
+      notnull: true
+    smiley_url:
+      type: string(50)
+      default: ''
+      notnull: true
+    smiley_width:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    smiley_height:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    smiley_order:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    display_on_posting:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+PhpbbLog:
+  connection: phpbb
+  tableName: phpbb_log
+  columns:
+    log_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    log_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    reportee_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    log_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    log_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    log_operation:
+      type: string(2147483647)
+      notnull: true
+    log_data:
+      type: string(2147483647)
+      notnull: true
+PhpbbStylesTemplateData:
+  connection: phpbb
+  tableName: phpbb_styles_template_data
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    template_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    template_filename:
+      type: string(100)
+      default: ''
+      notnull: true
+    template_included:
+      type: string(2147483647)
+      notnull: true
+    template_mtime:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    template_data:
+      type: string(2147483647)
+      notnull: true
+PhpbbAclRoles:
+  connection: phpbb
+  tableName: phpbb_acl_roles
+  columns:
+    role_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    role_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    role_description:
+      type: string(2147483647)
+      notnull: true
+    role_type:
+      type: string(10)
+      default: ''
+      notnull: true
+    role_order:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbReportsReasons:
+  connection: phpbb
+  tableName: phpbb_reports_reasons
+  columns:
+    reason_id:
+      type: integer(2)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    reason_title:
+      type: string(255)
+      default: ''
+      notnull: true
+    reason_description:
+      type: string(2147483647)
+      notnull: true
+    reason_order:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbStyles:
+  connection: phpbb
+  tableName: phpbb_styles
+  columns:
+    style_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    style_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    style_copyright:
+      type: string(255)
+      default: ''
+      notnull: true
+    style_active:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    template_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    theme_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    imageset_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbAttachments:
+  connection: phpbb
+  tableName: phpbb_attachments
+  columns:
+    attach_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    post_msg_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    in_message:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poster_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    is_orphan:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    physical_filename:
+      type: string(255)
+      default: ''
+      notnull: true
+    real_filename:
+      type: string(255)
+      default: ''
+      notnull: true
+    download_count:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    attach_comment:
+      type: string(2147483647)
+      notnull: true
+    extension:
+      type: string(100)
+      default: ''
+      notnull: true
+    mimetype:
+      type: string(100)
+      default: ''
+      notnull: true
+    filesize:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    filetime:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    thumbnail:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbAclOptions:
+  connection: phpbb
+  tableName: phpbb_acl_options
+  columns:
+    auth_option_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    auth_option:
+      type: string(50)
+      default: ''
+      notnull: true
+    is_global:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    is_local:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    founder_only:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbForumsTrack:
+  connection: phpbb
+  tableName: phpbb_forums_track
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    mark_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbPollVotes:
+  connection: phpbb
+  tableName: phpbb_poll_votes
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_option_id:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    vote_user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    vote_user_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+PhpbbSitelist:
+  connection: phpbb
+  tableName: phpbb_sitelist
+  columns:
+    site_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    site_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    site_hostname:
+      type: string(255)
+      default: ''
+      notnull: true
+    ip_exclude:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbStylesTheme:
+  connection: phpbb
+  tableName: phpbb_styles_theme
+  columns:
+    theme_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    theme_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    theme_copyright:
+      type: string(255)
+      default: ''
+      notnull: true
+    theme_path:
+      type: string(100)
+      default: ''
+      notnull: true
+    theme_storedb:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    theme_mtime:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    theme_data:
+      type: string(2147483647)
+      notnull: true
+PhpbbProfileFieldsLang:
+  connection: phpbb
+  tableName: phpbb_profile_fields_lang
+  columns:
+    field_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    lang_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    option_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    field_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    lang_value:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbModules:
+  connection: phpbb
+  tableName: phpbb_modules
+  columns:
+    module_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    module_enabled:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    module_display:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    module_basename:
+      type: string(255)
+      default: ''
+      notnull: true
+    module_class:
+      type: string(10)
+      default: ''
+      notnull: true
+    parent_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    left_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    right_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    module_langname:
+      type: string(255)
+      default: ''
+      notnull: true
+    module_mode:
+      type: string(255)
+      default: ''
+      notnull: true
+    module_auth:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbStylesImagesetData:
+  connection: phpbb
+  tableName: phpbb_styles_imageset_data
+  columns:
+    image_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    image_name:
+      type: string(200)
+      default: ''
+      notnull: true
+    image_filename:
+      type: string(200)
+      default: ''
+      notnull: true
+    image_lang:
+      type: string(30)
+      default: ''
+      notnull: true
+    image_height:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    image_width:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    imageset_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbSearchWordlist:
+  connection: phpbb
+  tableName: phpbb_search_wordlist
+  columns:
+    word_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    word_text:
+      type: string(255)
+      default: ''
+      notnull: true
+    word_common:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    word_count:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbPosts:
+  connection: phpbb
+  tableName: phpbb_posts
+  columns:
+    post_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poster_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    icon_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poster_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    post_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_approved:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    post_reported:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    enable_bbcode:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_smilies:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_magic_url:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_sig:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    post_username:
+      type: string(255)
+      default: ''
+      notnull: true
+    post_subject:
+      type: string(255)
+      default: ''
+      notnull: true
+    post_text:
+      type: string(2147483647)
+      notnull: true
+    post_checksum:
+      type: string(32)
+      default: ''
+      notnull: true
+    post_attachment:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    bbcode_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    bbcode_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    post_postcount:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    post_edit_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_edit_reason:
+      type: string(255)
+      default: ''
+      notnull: true
+    post_edit_user:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_edit_count:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_edit_locked:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+  relations:
+    PhpbbUsers:
+      local: poster_id
+      foreign: user_id
+      type: one
+PhpbbDrafts:
+  connection: phpbb
+  tableName: phpbb_drafts
+  columns:
+    draft_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    save_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    draft_subject:
+      type: string(255)
+      default: ''
+      notnull: true
+    draft_message:
+      type: string(2147483647)
+      notnull: true
+PhpbbGymConfig:
+  connection: phpbb
+  tableName: phpbb_gym_config
+  columns:
+    config_name:
+      type: string(255)
+      primary: true
+    config_value:
+      type: string(255)
+      default: ''
+      notnull: true
+    config_type:
+      type: string(10)
+      default: gym
+      notnull: true
+PhpbbZebra:
+  connection: phpbb
+  tableName: phpbb_zebra
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    zebra_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    friend:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    foe:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbPrivmsgsFolder:
+  connection: phpbb
+  tableName: phpbb_privmsgs_folder
+  columns:
+    folder_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    folder_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    pm_count:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbSearchWordmatch:
+  connection: phpbb
+  tableName: phpbb_search_wordmatch
+  columns:
+    post_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    word_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    title_match:
+      type: integer(1)
+      unsigned: 1
+      primary: true
+PhpbbSessions:
+  connection: phpbb
+  tableName: phpbb_sessions
+  columns:
+    session_id:
+      type: string(32)
+      fixed: true
+      primary: true
+    session_user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_last_visit:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_start:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    session_browser:
+      type: string(150)
+      default: ''
+      notnull: true
+    session_forwarded_for:
+      type: string(255)
+      default: ''
+      notnull: true
+    session_page:
+      type: string(255)
+      default: ''
+      notnull: true
+    session_viewonline:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    session_autologin:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    session_admin:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbExtensions:
+  connection: phpbb
+  tableName: phpbb_extensions
+  columns:
+    extension_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    extension:
+      type: string(100)
+      default: ''
+      notnull: true
+PhpbbWords:
+  connection: phpbb
+  tableName: phpbb_words
+  columns:
+    word_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    word:
+      type: string(255)
+      default: ''
+      notnull: true
+    replacement:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbAclGroups:
+  connection: phpbb
+  tableName: phpbb_acl_groups
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_option_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_role_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    auth_setting:
+      type: integer(1)
+      default: '0'
+      notnull: true
+PhpbbConfig:
+  connection: phpbb
+  tableName: phpbb_config
+  columns:
+    config_name:
+      type: string(255)
+      primary: true
+    config_value:
+      type: string(255)
+      default: ''
+      notnull: true
+    is_dynamic:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbTopicsPosted:
+  connection: phpbb
+  tableName: phpbb_topics_posted
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    topic_posted:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbForumsAccess:
+  connection: phpbb
+  tableName: phpbb_forums_access
+  columns:
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    session_id:
+      type: string(32)
+      fixed: true
+      primary: true
+PhpbbProfileFieldsData:
+  connection: phpbb
+  tableName: phpbb_profile_fields_data
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+PhpbbPollOptions:
+  connection: phpbb
+  tableName: phpbb_poll_options
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    poll_option_id:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_option_text:
+      type: string(2147483647)
+      notnull: true
+    poll_option_total:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbStylesTemplate:
+  connection: phpbb
+  tableName: phpbb_styles_template
+  columns:
+    template_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    template_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    template_copyright:
+      type: string(255)
+      default: ''
+      notnull: true
+    template_path:
+      type: string(100)
+      default: ''
+      notnull: true
+    bbcode_bitfield:
+      type: string(255)
+      default: kNg=
+      notnull: true
+    template_storedb:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    template_inherits_id:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    template_inherit_path:
+      type: blob(2147483647)
+      default: ''
+      notnull: true
+PhpbbExtensionGroups:
+  connection: phpbb
+  tableName: phpbb_extension_groups
+  columns:
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    group_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    cat_id:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    allow_group:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    download_mode:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    upload_icon:
+      type: string(255)
+      default: ''
+      notnull: true
+    max_filesize:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    allowed_forums:
+      type: string(2147483647)
+      notnull: true
+    allow_in_pm:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbBots:
+  connection: phpbb
+  tableName: phpbb_bots
+  columns:
+    bot_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    bot_active:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    bot_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    bot_agent:
+      type: string(255)
+      default: ''
+      notnull: true
+    bot_ip:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbTopicsWatch:
+  connection: phpbb
+  tableName: phpbb_topics_watch
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    notify_status:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbProfileFields:
+  connection: phpbb
+  tableName: phpbb_profile_fields
+  columns:
+    field_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    field_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    field_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    field_ident:
+      type: string(20)
+      default: ''
+      notnull: true
+    field_length:
+      type: string(20)
+      default: ''
+      notnull: true
+    field_minlen:
+      type: string(255)
+      default: ''
+      notnull: true
+    field_maxlen:
+      type: string(255)
+      default: ''
+      notnull: true
+    field_novalue:
+      type: string(255)
+      default: ''
+      notnull: true
+    field_default_value:
+      type: string(255)
+      default: ''
+      notnull: true
+    field_validation:
+      type: string(20)
+      default: ''
+      notnull: true
+    field_required:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_show_on_reg:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_hide:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_no_view:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_active:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_order:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    field_show_profile:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbConfirm:
+  connection: phpbb
+  tableName: phpbb_confirm
+  columns:
+    confirm_id:
+      type: string(32)
+      fixed: true
+      primary: true
+    session_id:
+      type: string(32)
+      fixed: true
+      primary: true
+    confirm_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    code:
+      type: string(8)
+      default: ''
+      notnull: true
+    seed:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbSearchResults:
+  connection: phpbb
+  tableName: phpbb_search_results
+  columns:
+    search_key:
+      type: string(32)
+      primary: true
+    search_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    search_keywords:
+      type: string(2147483647)
+      notnull: true
+    search_authors:
+      type: string(2147483647)
+      notnull: true
+PhpbbForums:
+  connection: phpbb
+  tableName: phpbb_forums
+  columns:
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    parent_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    left_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    right_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_parents:
+      type: string(2147483647)
+      notnull: true
+    forum_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_desc:
+      type: string(2147483647)
+      notnull: true
+    forum_desc_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_desc_options:
+      type: integer(4)
+      unsigned: 1
+      default: '7'
+      notnull: true
+    forum_desc_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    forum_link:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_password:
+      type: string(40)
+      default: ''
+      notnull: true
+    forum_style:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_image:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_rules:
+      type: string(2147483647)
+      notnull: true
+    forum_rules_link:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_rules_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_rules_options:
+      type: integer(4)
+      unsigned: 1
+      default: '7'
+      notnull: true
+    forum_rules_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    forum_topics_per_page:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    forum_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    forum_status:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    forum_posts:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_topics:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_topics_real:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_last_post_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_last_poster_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_last_post_subject:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_last_post_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    forum_last_poster_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    forum_last_poster_colour:
+      type: string(6)
+      default: ''
+      notnull: true
+    forum_flags:
+      type: integer(1)
+      default: '32'
+      notnull: true
+    display_subforum_list:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    display_on_index:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_indexing:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_icons:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    enable_prune:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    prune_next:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    prune_days:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    prune_viewed:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    prune_freq:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbPrivmsgsRules:
+  connection: phpbb
+  tableName: phpbb_privmsgs_rules
+  columns:
+    rule_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_check:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_connection:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_string:
+      type: string(255)
+      default: ''
+      notnull: true
+    rule_user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_action:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rule_folder_id:
+      type: integer(4)
+      default: '0'
+      notnull: true
+PhpbbModeratorCache:
+  connection: phpbb
+  tableName: phpbb_moderator_cache
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    username:
+      type: string(255)
+      default: ''
+      notnull: true
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    display_on_index:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+PhpbbRanks:
+  connection: phpbb
+  tableName: phpbb_ranks
+  columns:
+    rank_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    rank_title:
+      type: string(255)
+      default: ''
+      notnull: true
+    rank_min:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rank_special:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    rank_image:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbPrivmsgsTo:
+  connection: phpbb
+  tableName: phpbb_privmsgs_to
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    msg_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    author_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    pm_deleted:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    pm_new:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    pm_unread:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    pm_replied:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    pm_marked:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    pm_forwarded:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    folder_id:
+      type: integer(4)
+      default: '0'
+      notnull: true
+PhpbbWarnings:
+  connection: phpbb
+  tableName: phpbb_warnings
+  columns:
+    warning_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    post_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    log_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    warning_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbBanlist:
+  connection: phpbb
+  tableName: phpbb_banlist
+  columns:
+    ban_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    ban_userid:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    ban_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    ban_email:
+      type: string(100)
+      default: ''
+      notnull: true
+    ban_start:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    ban_end:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    ban_exclude:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    ban_reason:
+      type: string(255)
+      default: ''
+      notnull: true
+    ban_give_reason:
+      type: string(255)
+      default: ''
+      notnull: true
+PhpbbTopicsTrack:
+  connection: phpbb
+  tableName: phpbb_topics_track
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    mark_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbSessionsKeys:
+  connection: phpbb
+  tableName: phpbb_sessions_keys
+  columns:
+    key_id:
+      type: string(32)
+      fixed: true
+      primary: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+    last_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    last_login:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbUserGroup:
+  connection: phpbb
+  tableName: phpbb_user_group
+  columns:
+    id:
+      type: integer(20)
+      autoincrement: true
+      primary: true
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    group_leader:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_pending:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+PhpbbTopics:
+  connection: phpbb
+  tableName: phpbb_topics
+  columns:
+    topic_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    forum_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    icon_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_attachment:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_approved:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    topic_reported:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_title:
+      type: string(255)
+      default: ''
+      notnull: true
+    topic_poster:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_time_limit:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_views:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_replies:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_replies_real:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_status:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    topic_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    topic_first_post_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_first_poster_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    topic_first_poster_colour:
+      type: string(6)
+      default: ''
+      notnull: true
+    topic_last_post_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_last_poster_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_last_poster_name:
+      type: string(255)
+      default: ''
+      notnull: true
+    topic_last_poster_colour:
+      type: string(6)
+      default: ''
+      notnull: true
+    topic_last_post_subject:
+      type: string(255)
+      default: ''
+      notnull: true
+    topic_last_post_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_last_view_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_moved_id:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_bumped:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    topic_bumper:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_title:
+      type: string(255)
+      default: ''
+      notnull: true
+    poll_start:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_length:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_max_options:
+      type: integer(1)
+      default: '1'
+      notnull: true
+    poll_last_vote:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    poll_vote_change:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+PhpbbUsers:
+  connection: phpbb
+  tableName: phpbb_users
+  columns:
+    user_id:
+      type: integer(3)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    user_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    group_id:
+      type: integer(3)
+      unsigned: 1
+      default: '3'
+      notnull: true
+    user_permissions:
+      type: string(2147483647)
+      notnull: true
+    user_perm_from:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_ip:
+      type: string(40)
+      default: ''
+      notnull: true
+    user_regdate:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    username:
+      type: string(255)
+      default: ''
+      notnull: true
+    username_clean:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_password:
+      type: string(40)
+      default: ''
+      notnull: true
+    user_passchg:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_pass_convert:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_email:
+      type: string(100)
+      default: ''
+      notnull: true
+    user_email_hash:
+      type: integer(8)
+      default: '0'
+      notnull: true
+    user_birthday:
+      type: string(10)
+      default: ''
+      notnull: true
+    user_lastvisit:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_lastmark:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_lastpost_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_lastpage:
+      type: string(200)
+      default: ''
+      notnull: true
+    user_last_confirm_key:
+      type: string(10)
+      default: ''
+      notnull: true
+    user_last_search:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_warnings:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_last_warning:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_login_attempts:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_inactive_reason:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_inactive_time:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_posts:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_lang:
+      type: string(30)
+      default: ''
+      notnull: true
+    user_timezone:
+      type: decimal(5)
+      default: '0.00'
+      notnull: true
+      scale: false
+    user_dst:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_dateformat:
+      type: string(30)
+      default: 'd M Y H:i'
+      notnull: true
+    user_style:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_rank:
+      type: integer(3)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_colour:
+      type: string(6)
+      default: ''
+      notnull: true
+    user_new_privmsg:
+      type: integer(4)
+      default: '0'
+      notnull: true
+    user_unread_privmsg:
+      type: integer(4)
+      default: '0'
+      notnull: true
+    user_last_privmsg:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_message_rules:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_full_folder:
+      type: integer(4)
+      default: '-3'
+      notnull: true
+    user_emailtime:
+      type: integer(4)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_topic_show_days:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_topic_sortby_type:
+      type: string(1)
+      default: t
+      notnull: true
+    user_topic_sortby_dir:
+      type: string(1)
+      default: d
+      notnull: true
+    user_post_show_days:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_post_sortby_type:
+      type: string(1)
+      default: t
+      notnull: true
+    user_post_sortby_dir:
+      type: string(1)
+      default: a
+      notnull: true
+    user_notify:
+      type: integer(1)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_notify_pm:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    user_notify_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_allow_pm:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    user_allow_viewonline:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    user_allow_viewemail:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    user_allow_massemail:
+      type: integer(1)
+      unsigned: 1
+      default: '1'
+      notnull: true
+    user_options:
+      type: integer(4)
+      unsigned: 1
+      default: '895'
+      notnull: true
+    user_avatar:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_avatar_type:
+      type: integer(1)
+      default: '0'
+      notnull: true
+    user_avatar_width:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_avatar_height:
+      type: integer(2)
+      unsigned: 1
+      default: '0'
+      notnull: true
+    user_sig:
+      type: string(2147483647)
+      notnull: true
+    user_sig_bbcode_uid:
+      type: string(8)
+      default: ''
+      notnull: true
+    user_sig_bbcode_bitfield:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_from:
+      type: string(100)
+      default: ''
+      notnull: true
+    user_icq:
+      type: string(15)
+      default: ''
+      notnull: true
+    user_aim:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_yim:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_msnm:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_jabber:
+      type: string(255)
+      default: ''
+      notnull: true
+    user_website:
+      type: string(200)
+      default: ''
+      notnull: true
+    user_occ:
+      type: string(2147483647)
+      notnull: true
+    user_interests:
+      type: string(2147483647)
+      notnull: true
+    user_actkey:
+      type: string(32)
+      default: ''
+      notnull: true
+    user_newpasswd:
+      type: string(40)
+      default: ''
+      notnull: true
+    user_form_salt:
+      type: string(32)
+      default: ''
+      notnull: true
