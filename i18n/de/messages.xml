@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="IT" target-language="en" datatype="plaintext" original="messages" date="2009-08-21T14:28:59Z" product-name="messages">
+  <file source-language="IT" target-language="de" datatype="plaintext" original="messages" date="2009-08-21T14:28:59Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
         <source>Ultimi argomenti dal forum</source>
-        <target>Last topics from forum</target>
+        <target>Aktuelle Themen aus dem Forum</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Ultimi post dal forum</source>
-        <target>Last posts from forum</target>
+        <target>Letzter Beitrag aus dem Forum</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Inviato da %name%</source>
-        <target>Send from %name%'</target>
+        <target>Geschrieben von %name%'</target>
       </trans-unit>
       <trans-unit id="4">
         <source>il %date%</source>
-        <target>on %date%</target>
+        <target>am %date%</target>
       </trans-unit>    
     </body>
   </file>
 </xliff>
-      

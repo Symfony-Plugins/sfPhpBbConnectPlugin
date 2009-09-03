@@ -36,18 +36,18 @@ In the page template where you want to use the helpers, add at the beginning
 <?php use_helper('PhpBb') ?>
 
 You are ready for use the plugin!
-	
+
 Helper available
 ----------------
 
   * lastTopics($maxTopics)
     View last topics from the phpBB forum
     $maxTopics is the number of topics to display
-    
+
   * lastPosts($maxPosts)
     View last posts from the phpBB forum
     $maxPosts is the number of posts to display
-    
+
 Example of the plugin in action
 -------------------------------
 
