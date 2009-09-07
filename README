@@ -14,6 +14,16 @@ Installation
   * Open the file
     /plugins/sfPhpBbConnectPlugin/config/databases.yml
     and setup your dbname, username and password
+
+  * Enable plugin in your `ProjectConfiguration` class
+ 	
+        [php]
+        // config/ProjectConfiguration.class.php
+	    public function setup()
+ 	    {
+          // possibly add other plugins here...
+          $this->enablePlugins(array('sfDoctrinePlugin', 'sfPhpBbConnectPlugin'));
+ 	    }
         
   * Generate the models
   
@@ -32,23 +42,23 @@ How to use the plugin
 ----------------------
 
 In the page template where you want to use the helpers, add at the beginning
-
-<?php use_helper('PhpBb') ?>
+  [php]
+  use_helper('PhpBb')
 
 You are ready for use the plugin!
 
 Helper available
 ----------------
 
-  * lastTopics($maxTopics)
-    View last topics from the phpBB forum
+  * lastTopics($maxTopics)  
+    View last topics from the phpBB forum  
     $maxTopics is the number of topics to display
 
-  * lastPosts($maxPosts)
-    View last posts from the phpBB forum
+  * lastPosts($maxPosts)  
+    View last posts from the phpBB forum  
     $maxPosts is the number of posts to display
 
 Example of the plugin in action
 -------------------------------
 
-An example of the plugin in action can be viewed at www.estatica.it in the right column of all pages
+An example of the plugin in action can be viewed at [Estatica](http://www.estatica.it "www.estatica.it") in the right column of all pages
