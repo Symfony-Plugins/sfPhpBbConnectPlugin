@@ -8,9 +8,10 @@
  */
 class PluginPhpbbTopicsTable extends Doctrine_Table
 {
+
   /**
    * @param $topics Number of topics to view
-   * @return unknown_type
+   * @return Doctrine_Collection
    */
   public function lastTopics($topics = 5)
   {
@@ -23,6 +24,10 @@ class PluginPhpbbTopicsTable extends Doctrine_Table
     return $q->execute();
   }
 
+  /**
+   * @param $posts Number of posts to view
+   * @return Doctrine_Collection
+   */
   public function lastPosts($posts = 5)
   {
     $q = Doctrine_Query::create()
@@ -32,6 +37,21 @@ class PluginPhpbbTopicsTable extends Doctrine_Table
     ->innerJoin('p.PhpbbUsers u WITH p.poster_id = u.user_id')
     ->orderBy('p.post_time DESC')
     ->limit($posts);
+
+    return $q->execute();
+  }
+
+  /**
+   * @return Doctrine_Collection
+   */
+  public function onlineGuests()
+  {
+    $q = Doctrine_Query::create()
+    ->select('COUNT(DISTINCT s.session_ip) as guests')
+    ->from('PhpbbSessions s')
+    ->where('s.session_user_id = ?')
+    ->addWhere('s.session_time >= ?', array(sfConfig::get('app_anonymous_user_id'), time() - (1 * 60)))
+    ;
 
     return $q->execute();
   }

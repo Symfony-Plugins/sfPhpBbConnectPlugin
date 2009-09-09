@@ -58,6 +58,9 @@ Helper available
     View last posts from the phpBB forum  
     $maxPosts is the number of posts to display
 
+  * onlineGuests  
+    View the number of online guest users right now
+
 Example of the plugin in action
 -------------------------------
 

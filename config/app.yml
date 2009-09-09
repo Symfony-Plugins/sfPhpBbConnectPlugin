@@ -4,3 +4,5 @@ all:
   # If your site is www.site.it
   # your forum could be forum.site.it or www.site.it/forum
   url_phpbb: urlOfYourForum
+  # id anonymous (from table phpbb_users)
+  anonymous_user_id: 1

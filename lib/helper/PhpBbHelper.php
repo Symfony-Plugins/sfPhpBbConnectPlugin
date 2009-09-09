@@ -7,18 +7,20 @@ include_stylesheets();
 /**
  * View last topics from the phpBB forum
  *
- * @param $maxTopics Number of topics to display
- * @return string HTML code
  * 
  * @package    sfPhpBbConnectPlugin
  * @subpackage helper
  * @author     Fabrizio Pucci <fabrizio.pucci.ge@gmail.com>
  * @version    SVN: $Id$
+ * 
+ * @param $maxTopics Number of topics to display
+ * @return string HTML code
  */
 function lastTopics($maxTopics)
 {
 
   $topics =  Doctrine::getTable('PhpbbTopics')->lastTopics($maxTopics);
+
 
   $html = '<div class="sfPhpBbBox sfPhpBbBoxTopics">';
   $html .= '<div class="sfPhpBbBoxTitle sfPhpBbBoxTitleTopics">'.__('Ultimi argomenti dal forum').'</div>';
@@ -43,17 +45,19 @@ function lastTopics($maxTopics)
 /**
  *  View last posts from the phpBB forum
  * 
- * @param $maxPosts Number of posts to display
- * @return string HTML code
  * 
  * @package    sfPhpBbConnectPlugin
  * @subpackage helper
  * @author     Fabrizio Pucci <fabrizio.pucci.ge@gmail.com>
  * @version    SVN: $Id$
+ * 
+ * @param $maxPosts Number of posts to display
+ * @return string HTML code
  */
 function lastPosts($maxPosts)
 {
   $posts =  Doctrine::getTable('PhpbbTopics')->lastPosts($maxPosts);
+  
 
   $html = '<div class="sfPhpBbBox sfPhpBbBoxPosts">';
   $html .= '<div class="sfPhpBbBoxTitle">'.__('Ultimi post dal forum').'</div>';
@@ -73,4 +77,20 @@ function lastPosts($maxPosts)
 
   $html .= '</div>';
   return $html;
+}
+
+/**
+ * View the number of online guests
+ * 
+ * @package    sfPhpBbConnectPlugin
+ * @subpackage helper
+ * @author     Fabrizio Pucci <fabrizio.pucci.ge@gmail.com>
+ * @version    SVN: $Id$
+ * 
+ * @return integer Number of online guests
+ */
+function onlineGuests()
+{
+  $posts =  Doctrine::getTable('PhpbbTopics')->onlineGuests();
+  return $posts[0]->guests;
 }

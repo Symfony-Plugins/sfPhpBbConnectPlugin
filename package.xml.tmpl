@@ -1,30 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-  <name>swZendMailPlugin</name>
+  <name>sfPhpBbConnectPlugin</name>
   <channel>pear.symfony-project.com</channel>
-  <summary>View from your main site made with symfony, the latest news from phpBB forum</summary>
-  <description>View from your main site made with symfony, the latest news from phpBB forum</description>
+  <summary>View from your main site made with symfony, the latest news from phpBB 3.x forum</summary>
+  <description>View from your main site made with symfony, the latest news from phpBB 3.x forum</description>
   <lead>
     <name>Fabrizio Pucci</name>
     <user>Fabrizio</user>
     <email>fabrizio.pucci@gmail.com</email>
     <active>yes</active>
   </lead>
-  <date>##CURRENT_DATE##</date>
+  <date>2009-09-09</date>
   <version>
-    <release>##PLUGIN_VERSION##</release>
-	<api>##API_VERSION##</api>
+    <release>1.0.1</release>
+	<api>1.0.0</api>
   </version>
   <stability>
-    <release>##STABILITY##</release>
-    <api>##STABILITY##</api>
+    <release>stable</release>
+    <api>stable</api>
   </stability>
   <license uri="http://www.symfony-project.com/license">MIT license</license>
-	  <notes>-</notes>
+  <notes>
+    * Updated the readme file  
+    * Added onlineGuests helper
+  </notes>
   <contents>
-	    ##CONTENTS##
-	  </contents>
-	  <dependencies>
+    <dir name="/">
+      <file role="data" name="README" />
+      <file role="data" name="README-IT" />
+      <file role="data" name="LICENSE" />
+      <dir name="config">
+        <file role="data" name="app.yml" />
+        <file role="data" name="databases.yml" />
+        <dir name="doctrine">
+          <file role="data" name="schema.yml" />
+        </dir>
+      </dir>
+      <dir name="i18n">
+        <dir name="de">
+          <file role="data" name="messages.xml" />
+        </dir>
+        <dir name="en">
+          <file role="data" name="messages.xml" />
+        </dir>
+        <dir name="es">
+          <file role="data" name="messages.xml" />
+        </dir>
+        <dir name="fr">
+          <file role="data" name="messages.xml" />
+        </dir>
+      </dir>
+      <dir name="lib">
+         <dir name="helper">
+           <file role="data" name="PhpBbHelper.php" />
+         </dir>
+         <dir name="model">
+           <dir name="doctrine">
+             <file role="data" name="PluginPhpbbTopicsTable.class.php" />
+           </dir>
+         </dir>
+      </dir>
+      <dir name="web">
+        <dir name="css">
+          <file role="data" name="sf_phpbb_connect_plugin.css" />
+        </dir>
+      </dir>
+    </dir>
+  </contents>
+  <dependencies>
 	    <required>
  	      <php>
  	        <min>5.2.4</min>
@@ -42,5 +85,42 @@
 	    </required>
 	  </dependencies>
 	  <phprelease></phprelease>
-	  <changelog></changelog>
+ 	  <changelog>
+ 	    <release>
+ 	       <version>
+	         <release>1.0.1</release>
+ 	         <api>1.0.0</api>
+ 	       </version>
+ 	       <stability>
+ 	        <release>stable</release>
+ 	        <api>stable</api>
+ 	       </stability>
+ 	       <license uri="http://www.symfony-project.org/license">MIT license</license>
+ 	       <date>2009-09-09</date>
+	       <license>MIT</license>
+ 	       <notes>
+             * Updated the readme file  
+             * Added onlineGuests helper
+ 	       </notes>
+ 	     </release>
+ 	    <release>
+ 	       <version>
+	         <release>1.0.0</release>
+ 	         <api>1.0.0</api>
+ 	       </version>
+ 	       <stability>
+ 	        <release>stable</release>
+ 	        <api>stable</api>
+ 	       </stability>
+ 	       <license uri="http://www.symfony-project.org/license">MIT license</license>
+ 	       <date>2009-09-07</date>
+	       <license>MIT</license>
+ 	       <notes>
+    Fabrizio: First release of the plugin.  
+      This version support helper for:  
+        * View last topics from the phpBB forum  
+        * View last posts from the phpBB forum
+ 	       </notes>
+ 	     </release>
+	  </changelog>
 	</package>

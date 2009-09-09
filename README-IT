@@ -10,7 +10,17 @@ Installazione
   * Installare il plugin
 
         $ symfony plugin:install sfPhpBbConnectPlugin
-        
+
+  * Abilitare il plugin nella classe `ProjectConfiguration`
+ 	
+        [php]
+        // config/ProjectConfiguration.class.php
+	    public function setup()
+ 	    {
+          // è possibile aggiungere altri plugin...
+          $this->enablePlugins(array('sfDoctrinePlugin', 'sfPhpBbConnectPlugin'));
+ 	    }
+      
   * Aprire il file
     /plugins/sfPhpBbConnectPlugin/config/databases.yml
     ed inserire il dbname, username e password
@@ -20,7 +30,7 @@ Installazione
   
          $ symfony doctrine:generate-models
 
-  * REndere accessibile il foglio di stile
+  * Rendere accessibile il foglio di stile
   
         $ symfony plugin:publish-assets
 
@@ -34,22 +44,27 @@ Come usare il plugin
 
 Nella pagina del template dove si vuole utilizzare l'helper del plugin, aaggiungere all'inizio
 
-<?php use_helper('PhpBb') ?>
+  [php]
+  use_helper('PhpBb')
+
 
 Ora si è pronti all'utilizzo!
 	
 Helper disponibili
 ------------------
 
-  * lastTopics($maxTopics)
-    Visualizza gli ultimi argomenti dal forum phpBB
+  * lastTopics($maxTopics)  
+    Visualizza gli ultimi argomenti dal forum phpBB  
     $maxTopics è il numero degli argomenti da visualizzare
     
-  * lastPosts($maxPosts)
-    Visualizza gli ultimi post dal forum phpBB
+  * lastPosts($maxPosts)  
+    Visualizza gli ultimi post dal forum phpBB  
     $maxPosts è il numero dei post da visualizzare
+
+  * onlineGuests  
+    Visualizza il numero di utenti ospiti presenti online in questo momento
     
 Esempio del plugin in azione
 ----------------------------
 
-Un esempio del plugin in azione può essere visto all'indirizzo www.estatica.it nella colonna a destra in tutte le pagine del sito
+Un esempio del plugin in azione può essere visto all'indirizzo [Estatica](http://www.estatica.it "www.estatica.it") nella colonna a destra in tutte le pagine del sito
